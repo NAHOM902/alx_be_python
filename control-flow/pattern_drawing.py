@@ -10,7 +10,7 @@ while row < user:
 # nahom = 10
 
 # while nahom >= 0:
-#     elsa = 1
+#     elsa = 14
 #     while elsa < nahom:
 #         print("*", end="")
 #         elsa += 1
