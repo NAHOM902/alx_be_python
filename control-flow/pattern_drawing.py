@@ -1,8 +1,11 @@
-user = int(input("Enter the size fo the pattern: "))
+
+
+
+size = int(input("Enter the size fo the pattern: "))
 row = 0
 
-while row < user:
-    for _ in range(user):
+while row < size:
+    for _ in range(size):
         print("*", end="")
     print()
     row += 1
