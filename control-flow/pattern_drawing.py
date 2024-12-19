@@ -1,14 +1,13 @@
 
 
+Size = int(input("Enter the size fo the pattern: "))
+Row = 0
 
-size = int(input("Enter the size fo the pattern: "))
-row = 0
-
-while row < size:
-    for _ in range(size):
+while Row < Size:
+    for _ in range(Size):
         print("*", end="")
     print()
-    row += 1
+    Row += 1
 
 # nahom = 10
 
