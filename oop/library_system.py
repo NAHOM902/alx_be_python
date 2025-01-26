@@ -1,38 +1,40 @@
 # library_system.py
 
-# Base class for Book
+# Base class
 class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
 
-# Derived class EBook inheriting from Book
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
+
+# Derived class EBook
 class EBook(Book):
     def __init__(self, title, author, file_size):
-        super().__init__(title, author)  # Call base class constructor
-        self.file_size = file_size  # Specific attribute for EBook
+        super().__init__(title, author)  # Initialize base class (Book)
+        self.file_size = file_size
 
-# Derived class PrintBook inheriting from Book
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+
+# Derived class PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
-        super().__init__(title, author)  # Call base class constructor
-        self.page_count = page_count  # Specific attribute for PrintBook
+        super().__init__(title, author)  # Initialize base class (Book)
+        self.page_count = page_count
 
-# Library class that uses composition to manage books
+    def __str__(self):
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+# Library class (Composition)
 class Library:
     def __init__(self):
-        self.books = []  # List to hold books
+        self.books = []  # List to store Book, EBook, PrintBook instances
 
     def add_book(self, book):
-        # Adds a book to the library
         self.books.append(book)
 
     def list_books(self):
-        # Prints details of all books in the library
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif isinstance(book, PrintBook):
-                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
-            else:
-                print(f"Book: {book.title} by {book.author}")
+            print(book)
